@@ -1,4 +1,4 @@
-package org.perom.trainercalculator;
+package org.perom.trainercalculator.api;
 
 import com.garmin.fit.*;
 

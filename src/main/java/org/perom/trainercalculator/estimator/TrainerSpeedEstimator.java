@@ -1,4 +1,4 @@
-package org.perom.trainercalculator;
+package org.perom.trainercalculator.estimator;
 
 import java.util.ArrayList;
 import java.util.List;

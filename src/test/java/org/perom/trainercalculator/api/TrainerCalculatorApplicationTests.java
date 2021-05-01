@@ -1,4 +1,4 @@
-package org.perom.trainercalculator;
+package org.perom.trainercalculator.api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

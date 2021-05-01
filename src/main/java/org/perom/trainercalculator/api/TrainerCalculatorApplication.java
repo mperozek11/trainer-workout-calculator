@@ -1,14 +1,14 @@
-package org.perom.trainercalculator;
+package org.perom.trainercalculator.api;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
-import java.util.Arrays;
 
 @SpringBootApplication
+@EnableConfigurationProperties({
+		FileStorageProperties.class
+})
 public class TrainerCalculatorApplication {
 
 	public static void main(String[] args) {
