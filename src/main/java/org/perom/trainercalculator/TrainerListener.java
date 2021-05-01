@@ -10,7 +10,7 @@ public class TrainerListener implements RecordMesgListener, DeveloperFieldDescri
     List<String[]> data = new ArrayList<>();
 
     public TrainerListener(){
-        data.add(new String[] {"timestamp", "power"});
+
     }
 
     @Override
@@ -35,7 +35,7 @@ public class TrainerListener implements RecordMesgListener, DeveloperFieldDescri
         Field profileField = Factory.createField(mesg.getNum(), fieldNum);
         boolean namePrinted = false;
 
-        if (profileField == null) {
+        if (profileField == null) { //take a look at this field null nonsense
             return;
         }
 
