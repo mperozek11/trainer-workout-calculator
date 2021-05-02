@@ -15,7 +15,8 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'com.opencsv:opencsv:5.4'
-	implementation files('/Users/maxperozek/FitSDKRelease_21.53.00/java/fit.jar')
+	implementation files('libs/fit.jar')
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 }
