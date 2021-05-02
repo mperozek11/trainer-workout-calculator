@@ -1,4 +1,8 @@
-The goal for this project is to create a tool which accepts a garmin fit file as an input and uses power and time data to estimate the distance of the outdoor ride. 
+The goal for this project is to create a tool which accepts a garmin fit file as an input and uses power and time data to estimate the distance of the outdoor ride. Inspired by the TrainerRoad Cycling podcast.
+
+Features coming soon:
+- More robust fit file handling to ensure loading arbitrary fit file doesn't break everything. Currently all tested TrainerRoad fit files work which was initial goal.
+- Ability to upload an outdoor ride and use the road grade as an overlay for calculating distance since the estimation otherwise assumes an entirely flat parcours which is pretty boring and a bad estimate for most riders trying to compare trainer miles with outdoor miles.
 
 //TODO latex this section properly
 Math:
