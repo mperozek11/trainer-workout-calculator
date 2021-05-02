@@ -67,4 +67,7 @@ public class FileStorageService {
         }
     }
 
+    public Path getFileStorageLocation() {
+        return fileStorageLocation;
+    }
 }

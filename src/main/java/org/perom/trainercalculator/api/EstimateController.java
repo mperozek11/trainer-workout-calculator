@@ -26,18 +26,13 @@ public class EstimateController {
 
     //Add a query string param for imperial / metric
     @PostMapping("/estimate")
-    public FitEstimateResponse calculateDistance(@RequestParam("file") MultipartFile file) {
+    public FitEstimateResponse calculateDistance(@RequestParam("file") MultipartFile file, @RequestParam("weight") String weight) {
 
-        String fileName = fileStorageService.storeFile(file);
-
-        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/downloadFile/")
-                .path(fileName)
-                .toUriString();
+        String fileName = fileStorageService.getFileStorageLocation() + "/" + fileStorageService.storeFile(file);
 
         FitProcessor fitPro = new FitProcessor();
-        FitEstimateResponse response = fitPro.getEstimate("/Users/maxperozek/sample-fit-files/Kaiser.fit", 67, 9.1);
-        
+        FitEstimateResponse response = fitPro.getEstimate(fileName, Double.parseDouble(weight));
+
         return response;
     }
 

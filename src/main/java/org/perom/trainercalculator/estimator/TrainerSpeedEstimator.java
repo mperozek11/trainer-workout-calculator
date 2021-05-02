@@ -14,7 +14,7 @@ public class TrainerSpeedEstimator {
 
 
     // this will eventually return a TrainerWorkoutReport obj
-    public List<Double> estimateDistance(List<String[]> data, double riderWeight, double bikeWeight) {
+    public List<Double> estimateDistance(List<String[]> data, double weight) {
 
         List<Double> velocities = new ArrayList<>();
 
@@ -28,9 +28,9 @@ public class TrainerSpeedEstimator {
         velocities.add(0.0); // start from rest
 
         for (int i = 1; i < data.size() ; i++) {
-            pNeeded = getPNeeded(currVelocity, 0, riderWeight + bikeWeight);
+            pNeeded = getPNeeded(currVelocity, 0, weight);
             pExcess = Double.parseDouble(data.get(i)[1]) - pNeeded;
-            accel = (pExcess / currVelocity) / (riderWeight + bikeWeight);
+            accel = (pExcess / currVelocity) / (weight);
 
             currVelocity = currVelocity + (accel * 1);
             velocities.add(currVelocity);

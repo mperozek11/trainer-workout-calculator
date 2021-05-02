@@ -24,11 +24,11 @@ public class FitProcessor {
 
     /**
      * @param fileName
-     * @param riderWeight
+     * @param weight total weight of rider and bike
      * @return FitEstimateResponse for given fit file
      * @throws FileNotFoundException
      */
-    public FitEstimateResponse getEstimate(String fileName, double riderWeight, double bikeWeight) {
+    public FitEstimateResponse getEstimate(String fileName, double weight) {
 
         try{
             FileInputStream in = new FileInputStream(fileName);
@@ -36,7 +36,7 @@ public class FitProcessor {
             List<String[]> data = fitPro.loadFit(in);
 
             TrainerSpeedEstimator estimator = new TrainerSpeedEstimator();
-            List<Double> velocities = estimator.estimateDistance(data, riderWeight, bikeWeight);
+            List<Double> velocities = estimator.estimateDistance(data, weight);
 
             //avg vel in m/s
             double avgVel = velocities.stream().mapToDouble(val -> val).average().orElse(0.0);
